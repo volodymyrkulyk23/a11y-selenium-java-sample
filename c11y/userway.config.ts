@@ -12,4 +12,4 @@ export default {
       scope: 'overall',
   },
 }
-} satisfies Config;
+} satisfies Config; 
