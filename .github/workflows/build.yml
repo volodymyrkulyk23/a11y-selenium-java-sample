@@ -37,9 +37,10 @@ jobs:
         run: |
           mvn clean test
           cd ./c11y
+          ls -la
       - name: UserWay Accessibility Analysis
         uses: UserWayOrg/cicd-action@qa
         with:
           token: ${{ secrets.USERWAY_TOKEN }}
           report_paths: '../uw-a11y-reports'
-        working-directory: ./c11y
+        # working-directory: ./c11y
