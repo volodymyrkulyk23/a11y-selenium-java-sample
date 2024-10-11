@@ -1,0 +1,46 @@
+{
+  "meta" : {
+    "mode" : "background",
+    "version" : 1,
+    "htmlOrigin" : "../pages/userway.org-pricing-#accessibilitywidget11.10.2024-10:58:24-9811.html",
+    "date" : "2024-10-11T07:58:24.352828Z",
+    "test" : [ "Selenium Java Test" ],
+    "url" : "https://userway.org/pricing/#accessibilitywidget",
+    "framework" : "Selenium Java"
+  },
+  "config" : {
+    "includeRules" : [ "select-name" ],
+    "excludeRules" : [ ],
+    "includeBestPractices" : true,
+    "includeExperimental" : true,
+    "level" : "AAA",
+    "ignoreSelectors" : [ ],
+    "switchOff" : false,
+    "reportPath" : "./uw-a11y-reports",
+    "screenshots" : false,
+    "fullPageScreenshot" : "./uw-a11y-reports/screenshots/userway-org-pricing/full-page-screenshot-1680.png",
+    "strict" : false,
+    "printViolationsTable" : false
+  },
+  "violations" : [ {
+    "areas" : [ "SCREEN_READER" ],
+    "count" : {
+      "reviewed" : 0,
+      "passed" : 0,
+      "violation" : 0,
+      "inapplicable" : 0,
+      "incomplete" : 0
+    },
+    "description" : "A <select> elements is missing a required programatically associated accessible name.",
+    "disabilitiesAffected" : [ "BLIND", "LOW_VISION", "MOBILITY" ],
+    "display" : "Select name",
+    "errorMessage" : "Missing: associated name on select",
+    "issues" : [ ],
+    "issuesGroup" : { },
+    "level" : "A",
+    "outcome" : "inapplicable",
+    "recommendation" : "Action: Add an accessible name for each <select> element. How to fix:Use one of the following methods: Good • title attribute Better • aria-label attribute • aria-labelledby attribute referencing visible text Best • Explicit <label> element • Implicit (wrapped) <label> element",
+    "ruleId" : "select-name",
+    "severity" : "CRITICAL"
+  } ]
+}
