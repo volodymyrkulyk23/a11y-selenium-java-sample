@@ -26,12 +26,12 @@ jobs:
           cd ..
       - name: Install Java 11
         run: |
-          apt-get update
-          apt-get install -y openjdk-11-jdk
+          sudo apt-get update
+          sudo apt-get install -y openjdk-11-jdk
           java -version
       - name: Install Maven
         run: |
-          apt-get install -y maven
+          sudo apt-get install -y maven
           mvn -version
       - name: Run Java Selenium Tests
         run: |
