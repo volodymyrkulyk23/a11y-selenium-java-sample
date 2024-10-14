@@ -32,7 +32,7 @@ public class BGRTestSuiteRunner {
                         .reportPath("./uw-a11y-reports")
                         .build()
         );
-        backgroundRunner.enableBackgroundRunner();
+        // backgroundRunner.enableBackgroundRunner();
 
         // For clean logs
 //        System.setErr(new PrintStream(OutputStream.nullOutputStream()));
@@ -40,6 +40,6 @@ public class BGRTestSuiteRunner {
 
     @AfterSuite
     static void teardown() {
-        UserWayBackgroundRunner.getInstance().disableBackgroundRunner();
+        // UserWayBackgroundRunner.getInstance().disableBackgroundRunner();
     }
 }

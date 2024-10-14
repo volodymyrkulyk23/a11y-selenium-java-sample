@@ -35,11 +35,13 @@ public class BGRBeforeAllUseCaseTest {
 
     @Test
     void test_1() throws MalformedURLException {
+        // UserWayBackgroundRunner.getInstance().enableBackgroundRunner();
         driver.get("https://userway.org");
         driver.navigate().to("https://userway.org/widget/");
         driver.navigate().to(new URL("https://userway.org/accessibility-monitor/"));
         driver.navigate().back();
         driver.navigate().forward();
+        // UserWayBackgroundRunner.getInstance().disableBackgroundRunner();
     }
 
     @Test
