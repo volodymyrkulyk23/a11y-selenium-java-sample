@@ -46,5 +46,4 @@ jobs:
         uses: UserWayOrg/cicd-action@qa
         with:
           token: ${{ secrets.USERWAY_TOKEN }}
-          report_paths: './uw-a11y-reports'
           config_path: './c11y/userway.config.ts'
