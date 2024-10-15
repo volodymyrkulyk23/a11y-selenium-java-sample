@@ -38,6 +38,10 @@ jobs:
           mvn clean test
           cd ./c11y
           ls -la
+      - name: Debug
+        run: |
+          ls -la
+          pwd
       - name: UserWay Accessibility Analysis
         uses: UserWayOrg/cicd-action@qa
         with:
