@@ -47,4 +47,4 @@ jobs:
         with:
           token: ${{ secrets.USERWAY_TOKEN }}
           report_paths: './uw-a11y-reports'
-        # working-directory: ./c11y
+          config_path: './c11y/userway.config.ts'
