@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+uw-a11y-reports
+node_modules
