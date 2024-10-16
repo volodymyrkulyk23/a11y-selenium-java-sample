@@ -34,7 +34,7 @@ public class ManualScanTest {
         if (driver != null) {
             driver.quit();
         }
-        RecursiveDirectoryDelete.deleteDirectoryRecursively(REPORTS_PATH);
+//      RecursiveDirectoryDelete.deleteDirectoryRecursively(REPORTS_PATH);
     }
 
     @Test
