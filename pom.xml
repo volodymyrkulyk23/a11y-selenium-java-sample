@@ -12,6 +12,86 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>5.11.0</junit.version>
+        <junit.suite.version>1.11.0</junit.suite.version>
+        <userway.version>0.0.13</userway.version>
+        <selenium.version>4.18.1</selenium.version>
+        <assertj.version>3.24.2</assertj.version>
+        <logback.version>1.5.7</logback.version>
+        <lombok.version>1.18.30</lombok.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.userway</groupId>
+            <artifactId>a11y-selenium-java</artifactId>
+            <version>${userway.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit.suite.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <!-- Uncomment if you want to run manual sample tests -->
+                    <excludes>
+                      <exclude>**/org/userway/selenium/runner/*.java</exclude>
+                    </excludes>
+
+                    <!-- Uncomment if you want to run Background Runner sample tests -->
+<!--                    <includes>-->
+<!--                        <include>**/BGRTestSuiteRunner.java</include>-->
+<!--                    </includes>-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -1,0 +1,43 @@
+name: CI
+on:
+  pull_request:
+    branches: ['main']
+  push:
+    branches: ['main']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install npm packages
+        run: |
+          cd ./ca11y
+          npm install
+          nohup npm run dev > output.log 2>&1 &
+          sleep 5
+          cd ..
+      - name: Install Java 11
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-11-jdk
+          java -version
+      - name: Install Maven
+        run: |
+          sudo apt-get install -y maven
+          mvn -version
+      - name: Run Java Selenium Tests
+        run: |
+          mvn clean test
+      - name: UserWay Accessibility Analysis
+        uses: UserWayOrg/cicd-action@qa
+        with:
+          token: ${{ secrets.USERWAY_TOKEN }}
+          config_path: './ca11y/userway.config.ts'
