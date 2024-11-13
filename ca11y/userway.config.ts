@@ -8,7 +8,8 @@ export default {
     // reportPaths: ['./uw-a11y-reports'], - for managed scans
     server: "https://api.qa.userway.dev",
     override: {
-        'main': {
+        'br1': {
+            targetBranch: 'main',
             retention: 'long',
             scope: 'overall',
         },

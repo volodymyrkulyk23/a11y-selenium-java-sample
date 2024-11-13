@@ -81,14 +81,14 @@
                 <version>3.5.0</version>
                 <configuration>
                     <!-- Uncomment if you want to run manual sample tests -->
-                    <excludes>
+                    <!-- <excludes>
                       <exclude>**/org/userway/selenium/runner/*.java</exclude>
-                    </excludes>
+                    </excludes> -->
 
                     <!-- Uncomment if you want to run Background Runner sample tests -->
-<!--                    <includes>-->
-<!--                        <include>**/BGRTestSuiteRunner.java</include>-->
-<!--                    </includes>-->
+                   <includes>
+                       <include>**/BGRTestSuiteRunner.java</include>
+                   </includes> 
                 </configuration>
             </plugin>
         </plugins>
