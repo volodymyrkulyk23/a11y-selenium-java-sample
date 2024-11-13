@@ -2,10 +2,11 @@ import { Config } from '@userway/cicd-core';
 
 export default {
     token: process.env.USERWAY_TOKEN,
-    organization: '<ORGANIZATION_SLUG>',
-    project: '<PROJECT_SLUG>',
+    organization: 'volodymyr-kulyk-userway-org-igpgx',
+    project: 'a11y-selenium-java-sample',
     reportPaths: ['./ca11y/uw-a11y-reports'],
-    server: "https://userway.org",
+    // reportPaths: ['./uw-a11y-reports'], - for managed scans
+    server: "https://api.qa.userway.dev",
     override: {
         'main': {
             retention: 'long',
